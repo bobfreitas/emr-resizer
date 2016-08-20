@@ -156,11 +156,7 @@ public class ProcessArgs {
 		System.out.println("    and 'm4.10xlarge' are supported.");
 		System.out.println("");
 		System.out.println("  -instcnt=<num>");
-		System.out.println("    Where <num> will be the number if instance to added or removed. There are limits on");
-		System.out.println("    the number of instances that can be allocated for each instance type:");
-		System.out.println("      'm4.2xlarge' - 40 instances");
-		System.out.println("      'm4.4xlarge' - 10 instances");
-		System.out.println("      'm4.10xlarge' - 5 instances");
+		System.out.println("    Where <num> will be the number if instance to added or removed.");
 		System.out.println("");
 		System.out.println("  -timeout=<num>");
 		System.out.println("    An optional parameter for the number of minutes to wait for the instance operation");
