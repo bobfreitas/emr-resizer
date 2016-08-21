@@ -7,24 +7,24 @@ and the last step would be to decrease the number of nodes.
 
 ## Usage
 
-java -jar emr-resizer-1.0.0-bundle.jar  -cid=<id> -optype=<operation> -insttype=<type> -instcnt=<num> [-timeout=<num>] [-iam]
+java -jar emr-resizer-1.0.0-bundle.jar  -cid=\<id\> -optype=\<operation\> -insttype=\<type\> -instcnt=\<num\> [-timeout=\<num\>] [-iam]
 
 where:
 
-  -cid=<id>
+  -cid=\<id\>
     The Amazon cluster identification string, such as 'j-34QCX7S1KA9DB'
 
-  -optype=<operation>
-    Where <operation> will be either 'increase' or 'decrease'.
+  -optype=\<operation\>
+    Where "operation" will be either 'increase' or 'decrease'.
 
-  -insttype=<type>
+  -insttype=\<type\>
     The Amazon instance type identification string. Currently, 'm4.2xlarge', 'm4.4xlarge'
     and 'm4.10xlarge' are supported.
 
-  -instcnt=<num>
-    Where <num> will be the number if instance to added or removed. 
+  -instcnt=\<num\>
+    Where num will be the number if instance to added or removed. 
 
-  -timeout=<num>
+  -timeout=\<num\>
     An optional parameter for the number of minutes to wait for the instance operation
     to complete before timing out, defaults to 20
 
