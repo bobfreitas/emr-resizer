@@ -32,6 +32,11 @@ import com.freitas.emr.Const.InstanceEnum;
 import com.freitas.emr.ProcessArgs.OpTypeEnum;
 
 public class EmrResizer {
+	
+	static final List<String> SEARCH_STATES = new ArrayList<String>();
+	static {
+		SEARCH_STATES.add(InstanceState.RUNNING.name());
+	}
 
 	private static final int ONE_MINUTE = 60*1000;
 	private final AmazonElasticMapReduce client;
@@ -298,14 +303,13 @@ public class EmrResizer {
 		ListInstancesRequest request = new ListInstancesRequest();
 		request.setClusterId(clusterId);
 		request.setInstanceGroupId(autoInstGrpId);
+		request.setInstanceStates(SEARCH_STATES);
 		String marker = null;
 		do {
 			ListInstancesResult results = client.listInstances(request);
 			marker = results.getMarker();
 			for (Instance inst : results.getInstances()) {
-				if (inst.getStatus().getState().contains(InstanceState.RUNNING.name())) {
-					cnt++;
-				}
+				cnt++;
 			}
 			request.setMarker(marker);
 		} while (marker != null);
